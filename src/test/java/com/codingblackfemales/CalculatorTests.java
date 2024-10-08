@@ -18,11 +18,59 @@ public class CalculatorTests {
     }
 
     @Test
+    @DisplayName("add a positive and negative number")
+    public void testAdditionPositiveAndNegative() {
+        final Integer sum = Calculator.add(2, -4);
+
+        assertEquals(-2, sum);
+    }
+
+    @Test
+    @DisplayName("add two negative numbers")
+    public void testAdditionOfTwoNegativeNumbers() {
+        final Integer sum = Calculator.add(-2, -4);
+
+        assertEquals(-6, sum);
+    }
+
+    @Test
+    @DisplayName("add a positive number and zero")
+    public void testAdditionOfZero() {
+        final Integer sum = Calculator.add(2, 0);
+
+        assertEquals(2, sum);
+    }
+
+    @Test
     @DisplayName("subtract two numbers")
     public void testSubtraction() {
         final Integer difference = Calculator.subtract(2, 4);
 
         assertEquals(-2, difference);
+    }
+
+    @Test
+    @DisplayName("subtract a positive number and a negative number")
+    public void testSubtractionOfPositiveNumberAndNegative() {
+        final Integer difference = Calculator.subtract(2, -4);
+
+        assertEquals(6, difference);
+    }
+
+    @Test
+    @DisplayName("subtract two negative numbers")
+    public void testSubtractionOfTwoNegativeNumbers() {
+        final Integer difference = Calculator.subtract(-2, -4);
+
+        assertEquals(2, difference);
+    }
+
+    @Test
+    @DisplayName("subtraction of zero")
+    public void testSubtractionOfZero() {
+        final Integer difference = Calculator.subtract(2, 0);
+
+        assertEquals(2, difference);
     }
 
     @Test

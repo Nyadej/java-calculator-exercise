@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 @DisplayName(value = "The Calculator should")
 public class CalculatorTests {
@@ -54,6 +55,41 @@ public class CalculatorTests {
         final Integer multiplication = Calculator.multiply(2, 0);
 
         assertEquals(0, multiplication);
+    }
+
+    @Test
+    @DisplayName("dividing by two numbers")
+    public void testDivisionByTwoNumbers() {
+        final Integer division = Calculator.divide(4, 2);
+
+        assertEquals(2, division);
+    }
+
+    @Test
+    @DisplayName("dividing by a positive and a negative number")
+    public void testDivisionByPositiveAndNegativeNumber() {
+        final Integer division = Calculator.divide(4, -2);
+
+        assertEquals(-2, division);
+    }
+
+    @Test
+    @DisplayName("dividing by two negative numbers")
+    public void testDivisionByNegativeNumbers() {
+        final Integer division = Calculator.divide(-4, -2);
+
+        assertEquals(2, division);
+    }
+
+    @Test
+    @DisplayName("dividing by zero throws ArithmeticException")
+    public void testDivisionByZero() {
+        try {
+            Calculator.divide(4, 0);
+            fail("ArithmeticException expected");
+        } catch (ArithmeticException e) {
+            assertEquals("/ by zero", e.getMessage());
+        }
     }
 
 }

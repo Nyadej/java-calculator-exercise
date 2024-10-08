@@ -26,7 +26,7 @@ public class CalculatorTests {
 
     @Test
     @DisplayName("multiply two numbers")
-    public void testMultiplicationTwoPositiveNumbers() {
+    public void testMultiplication() {
         final Integer multiplication = Calculator.multiply(2, 4);
 
         assertEquals(8, multiplication);
@@ -34,15 +34,15 @@ public class CalculatorTests {
 
     @Test
     @DisplayName("multiply a positive and a negative number")
-    public void testMultiplicationTwoPositiveAndNegativeNumber() {
+    public void testMultiplicationOfPositiveAndNegativeNumber() {
         final Integer multiplication = Calculator.multiply(2, -4);
 
         assertEquals(-8, multiplication);
     }
 
     @Test
-    @DisplayName("multiply two number numbers")
-    public void testMultiplicationTwoNegativeNumbers() {
+    @DisplayName("multiply two negative numbers")
+    public void testMultiplicationOfNegativeNumbers() {
         final Integer multiplication = Calculator.multiply(-2, -4);
 
         assertEquals(8, multiplication);
